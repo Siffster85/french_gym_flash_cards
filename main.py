@@ -21,7 +21,7 @@ def next_card():
   canvas.itemconfig(card_title, text="French", fill="black")
   canvas.itemconfig(card_word, text=current_card["French"], fill="black")
   canvas.itemconfig(card_background, image=card_front_img)
-  flip_timer = window.after(3000, func=flip_card)
+  flip_timer = window.after(3000, func=flip_card) #Time in Miliseconds, change as desired.
   
 def flip_card():
   canvas.itemconfig(card_title, text="English", fill="white")
@@ -37,7 +37,7 @@ def is_known():
 window = Tk()
 window.title("Flash Cards - French")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
-flip_timer = window.after(3000, func=flip_card)
+flip_timer = window.after(3000, func=flip_card) #Time in Miliseconds, change as desired.
 
 canvas = Canvas(width=800, height=526)
 card_front_img = PhotoImage(file="./images/card_front.png")
@@ -57,8 +57,5 @@ known_button = Button(image=tick_image, highlightthickness=0, command=is_known)
 known_button.grid(row=1, column=1)
 
 next_card()
-
-
-
 
 window.mainloop()
